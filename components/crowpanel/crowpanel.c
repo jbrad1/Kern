@@ -213,12 +213,13 @@ esp_err_t bsp_display_new_with_handles(const bsp_display_config_t *config,
           {
               .h_size = BSP_LCD_H_RES,
               .v_size = BSP_LCD_V_RES,
-              .hsync_back_porch = 160,
-              .hsync_pulse_width = 70,
-              .hsync_front_porch = 160,
+              /* Adjusted timing parameters for 800x480 5-inch panel */
+              .hsync_back_porch = 46,
+              .hsync_pulse_width = 16,
+              .hsync_front_porch = 210,
               .vsync_back_porch = 23,
               .vsync_pulse_width = 10,
-              .vsync_front_porch = 12,
+              .vsync_front_porch = 22,
           },
   };
 
