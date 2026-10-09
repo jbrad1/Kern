@@ -15,7 +15,7 @@ set(dev_signing_key "${CMAKE_CURRENT_LIST_DIR}/dev_signing_key.pem")
 if(NOT EXISTS "${dev_signing_key}")
     message(STATUS "Generating dev signing key ${dev_signing_key}")
     execute_process(
-        COMMAND python -m espsecure generate-signing-key
+        COMMAND python -m espsecure generate_signing_key
             --version 2 --scheme rsa3072 "${dev_signing_key}"
         RESULT_VARIABLE keygen_result)
     if(NOT keygen_result EQUAL 0)
